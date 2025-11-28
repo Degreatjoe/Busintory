@@ -3,500 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUSINTORY - Smarter Sales, Everyday!</title>
-    <!-- Import Inter font, which was used previously -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <title>BUSINTORY</title>
+    <meta name="keywords" content="inventory management, sales tracking, Nigerian SMEs, business growth, stock management, small business app, offline business app">
+    <meta name="description" content="BUSINTORY is a simple and reliable inventory and sales management app built for Nigerian SMEs. Manage stock, track sales, and grow your business confidently.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="/styles/busintory.css" as="style">
+    <link rel="stylesheet" href="/styles/busintory.css" media="print" onload="this.media='all'">
+    <link rel="icon" href="images/busintory_green_and_orange.png" type="image/png">
+
     <style>
-        /* CSS Variables for Brand Colors */
-        :root {
-            --c-green: #043915;        /* Deep Forest Green (Primary) */
-            --c-orange: #F28500;       /* Tangerine (Accent) */
-            --c-yellow: #FFFD8F;       /* Pale Yellow (Secondary Background) */
-            --c-white: #ffffff;
-            --c-gray-light: #f7f7f7;
-            --c-gray-dark: #1f2937;
-            --c-text-med: #4b5563;
-            --c-text-dark: #374151;
-            --max-width: 1280px;
-        }
+    /* Variables used above the fold */
+    :root {
+        --c-green: #043915;
+        --c-orange: #F28500;
+        --c-yellow: #FFFD8F;
+        --c-white: #ffffff;
+        --c-gray-light: #f7f7f7;
+        --c-text-dark: #374151;
+    }
 
-        /* --- Global Styles --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    /* Reset + Global */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--c-gray-light);
+        color: var(--c-text-dark);
+        line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--c-gray-light);
-            color: var(--c-text-dark);
-            line-height: 1.6;
-        }
+    .container {
+        max-width: 1280px;
+        margin: auto;
+        padding: 0 1rem;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s, transform 0.3s;
-        }
+    /* Header */
+    .header {
+        background-color: var(--c-white);
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .logo { max-width: 150px; }
+    .logo img { width: 100%; height: auto; }
 
-        .container {
-            max-width: var(--max-width);
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem; /* px-4 */
-            padding-right: 1rem; /* px-4 */
-        }
-        
-        /* --- Header / Navigation Bar --- */
-        .header {
-            background-color: var(--c-white);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
+    .nav-links {
+        display: none;
+        gap: 2rem;
+        color: var(--c-green);
+        font-weight: 500;
+    }
+    @media (min-width: 768px) {
+        .nav-links { display: flex; }
+    }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .logo{
-            max-width: 150px;
-        }
-        .logo img{
-            max-width: 100%;
-            height: auto;
-        }
+    .header-cta {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--c-white);
+        background-color: var(--c-green);
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
 
-        .logo-text {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: var(--c-green);
-            letter-spacing: -0.025em; /* tracking-tight */
-        }
+    /* Hero Section */
+    .hero-section {
+        background-color: var(--c-green);
+        color: var(--c-white);
+        padding: 5rem 0 6rem;
+        text-align: center;
+    }
+    @media (min-width: 768px) {
+        .hero-section { padding: 8rem 0 10rem; }
+    }
 
-        .nav-links {
-            display: none; /* hidden on mobile */
-            gap: 2rem; /* space-x-8 */
-            color: var(--c-green);
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: var(--c-orange);
-        }
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        /* Call to Action Button in Header */
-        .header-cta {
-            padding: 0.5rem 1.25rem; /* px-5 py-2 */
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 600; /* font-semibold */
-            color: var(--c-white);
-            background-color: var(--c-orange);
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .header-cta:hover {
-            background-color: var(--c-green);
-            transform: scale(1.05);
-        }
+    .hero-tagline {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--c-yellow);
+    }
 
-        /* --- Hero Section --- */
-        .hero-section {
-            background-color: var(--c-yellow);
-            color: var(--c-green);
-            padding-top: 5rem; /* pt-20 */
-            padding-bottom: 6rem; /* pb-24 */
-            text-align: center;
-        }
-        
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) {
+        .hero-title { font-size: 3.75rem; }
+    }
+    @media (min-width: 768px) {
+        .hero-title { font-size: 4.5rem; }
+    }
 
-        .hero-tagline {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--c-orange);
-        }
+    .hero-title .accent { color: var(--c-orange); }
 
-        .hero-title {
-            font-size: 3rem; /* text-5xl */
-            font-weight: 800; /* font-extrabold */
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-        .hero-title .accent {
-            color: var(--c-orange);
-        }
+    .hero-description {
+        max-width: 48rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+    }
 
-        .hero-description {
-            max-width: 48rem; /* max-w-3xl */
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 500;
-            margin-bottom: 2.5rem;
-        }
+    .hero-cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    @media (min-width: 640px) {
+        .hero-cta-group { flex-direction: row; }
+    }
 
-        .hero-cta-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem; /* space-y-4 */
-        }
-        
-        .hero-cta-group a {
-            padding: 0.75rem 2rem; /* px-8 py-3 */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+    .hero-cta-group a {
+        padding: 0.75rem 2rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
 
-        .cta-primary {
-            color: var(--c-white);
-            background-color: var(--c-green);
-        }
-        .cta-primary:hover {
-            background-color: var(--c-orange);
-            transform: translateY(-2px);
-        }
-        
-        .cta-secondary {
-            color: var(--c-green);
-            background-color: var(--c-white);
-            border: 2px solid var(--c-green);
-        }
-        .cta-secondary:hover {
-            background-color: var(--c-green);
-            color: var(--c-white);
-            transform: translateY(-2px);
-        }
+    .cta-primary {
+        color: var(--c-green);
+        background-color: var(--c-yellow);
+        border: 2px solid var(--c-yellow);
+    }
 
-        /* --- About/Mission Section --- */
-        .about-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            background-color: var(--c-white);
-        }
-
-        .about-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem; /* lg:gap-16 */
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.25rem; /* text-3xl */
-            font-weight: 800;
-            color: var(--c-green);
-            margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            font-size: 1.125rem; /* text-lg */
-            color: var(--c-text-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .mission-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem; /* space-y-3 */
-        }
-
-        .mission-list li {
-            display: flex;
-            align-items: flex-start;
-            font-size: 1.125rem;
-            color: var(--c-text-dark);
-        }
-
-        .checkmark-icon {
-            height: 1.5rem;
-            width: 1.5rem;
-            color: var(--c-orange);
-            margin-right: 0.75rem;
-            margin-top: 0.1rem;
-            flex-shrink: 0;
-        }
-
-        /* Mockup Placeholder */
-        .mockup-visual {
-            padding: 2rem;
-            background-color: var(--c-yellow);
-            border-radius: 1.5rem; /* rounded-3xl */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mockup-frame {
-            height: 20rem; /* h-80 */
-            width: 100%;
-            background-color: var(--c-green);
-            border-radius: 1rem; /* rounded-2xl */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid rgba(4, 57, 21, 0.2); /* border-busintory-green/50 */
-            padding: 0.5rem;
-            text-align: center;
-            color: var(--c-white);
-        }
-
-        .mockup-text .title {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .mockup-text .subtitle {
-            font-size: 1.25rem; /* text-xl */
-            display: block;
-        }
-        .mockup-emojis {
-            margin-top: 1rem;
-            color: var(--c-orange);
-            font-size: 2.25rem; /* text-4xl */
-        }
-        
-        .mockup-decoration-top {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 6rem;
-            width: 6rem;
-            background-color: var(--c-orange);
-            border-bottom-left-radius: 1.5rem;
-            opacity: 0.8;
-        }
-        
-        .mockup-decoration-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4rem;
-            width: 4rem;
-            background-color: var(--c-green);
-            border-top-right-radius: 1.5rem;
-            opacity: 0.2;
-        }
-
-        /* --- Features Section --- */
-        .features-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            background-color: var(--c-gray-light);
-        }
-
-        .features-header {
-            text-align: center;
-            margin-bottom: 4rem; /* mb-16 */
-        }
-
-        .features-header h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800;
-            color: var(--c-green);
-            margin-bottom: 0.75rem;
-        }
-
-        .features-header p {
-            font-size: 1.25rem; /* text-xl */
-            color: var(--c-text-med);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem; /* gap-8 */
-        }
-
-        .feature-card {
-            background-color: var(--c-white);
-            padding: 1.5rem; /* p-6 */
-            border-radius: 1rem; /* rounded-2xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-xl */
-            border-top: 4px solid var(--c-green);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: scale(1.02);
-        }
-
-        .feature-icon-box {
-            height: 3rem; /* h-12 */
-            width: 3rem; /* w-12 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px; /* rounded-full */
-            color: var(--c-white);
-            margin-bottom: 1rem;
-            background-color: var(--c-green);
-            box-shadow: 0 10px 15px -3px rgba(4, 57, 21, 0.1), 0 4px 6px -2px rgba(4, 57, 21, 0.05);
-        }
-        
-        .feature-icon-box svg {
-            height: 1.5rem;
-            width: 1.5rem;
-            color: var(--c-yellow);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 700;
-            color: var(--c-green);
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-card p {
-            color: var(--c-gray-600);
-        }
-
-        /* --- CTA Section: Final Push --- */
-        .final-cta-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            background-color: var(--c-green);
-            text-align: center;
-        }
-
-        .final-cta-section h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800;
-            color: var(--c-yellow);
-            margin-bottom: 1rem;
-        }
-
-        .final-cta-section p {
-            font-size: 1.25rem; /* text-xl */
-            color: rgba(255, 255, 255, 0.8); /* gray-200 */
-            max-width: 42rem; /* max-w-2xl */
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-        }
-
-        .final-cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem; /* px-10 py-4 */
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 700;
-            color: var(--c-green);
-            background-color: var(--c-orange);
-            border-radius: 9999px; /* rounded-full */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-2xl */
-        }
-
-        .final-cta-button:hover {
-            background-color: var(--c-yellow);
-            transform: scale(1.05);
-        }
-
-        /* --- Footer --- */
-        .footer {
-            background-color: var(--c-gray-dark);
-            color: var(--c-white);
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            text-align: center;
-            font-size: 0.875rem; /* text-sm */
-        }
-
-        .footer-brand {
-            margin-bottom: 1rem;
-        }
-        .footer-brand span {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 700;
-            color: var(--c-orange);
-        }
-
-        .footer-links a {
-            margin: 0 1rem;
-        }
-        .footer-links a:hover {
-            color: var(--c-orange);
-        }
-
-        /* --- Media Queries (Responsiveness) --- */
-
-        /* sm: - Small devices (640px and up) */
-        @media (min-width: 640px) {
-            .hero-cta-group {
-                flex-direction: row;
-                gap: 1rem; /* space-x-4 */
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .hero-title {
-                font-size: 3.75rem; /* sm:text-6xl */
-            }
-        }
-
-        /* md: - Medium devices (768px and up) */
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex; /* md:flex */
-            }
-            .hero-title {
-                font-size: 4.5rem; /* md:text-7xl */
-            }
-            .hero-section {
-                padding-top: 8rem; /* md:pt-32 */
-                padding-bottom: 10rem; /* md:pb-40 */
-            }
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
-            }
-        }
-
-        /* lg: - Large devices (1024px and up) */
-        @media (min-width: 1024px) {
-            .about-grid {
-                flex-direction: row;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr); /* lg:grid-cols-2 */
-                gap: 4rem;
-            }
-            .about-text {
-                margin-bottom: 0; /* lg:mb-0 */
-            }
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
-            }
-            .final-cta-section h2 {
-                font-size: 3rem; /* sm:text-5xl */
-            }
-        }
-    </style>
+    .cta-secondary {
+        color: var(--c-white);
+        background-color: transparent;
+        border: 2px solid var(--c-white);
+    }
+</style>
 </head>
 <body>
 
-    <!-- HEADER: Navigation Bar -->
     <header class="header">
         <div class="container header-content">
-            <!-- Logo & Brand Name -->
             <a href="#" class="logo-link">
-                <div class="logo"><img src="images/blogo.png" alt="busintory Logo"></div>
+                <div class="logo"><img src="images/blogo.svg" alt="busintory Logo"></div>
             </a>
 
-            <!-- Desktop Navigation Links (Hidden on Mobile) -->
             <nav class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#about">Our Mission</a>
@@ -504,7 +171,6 @@
                 <a href="#contact">Contact</a>
             </nav>
 
-            <!-- Call to Action Button -->
             <a href="#" class="header-cta">
                 Start Free Trial
             </a>
@@ -512,7 +178,6 @@
     </header>
 
     <main>
-        <!-- HERO SECTION: Bold Branding -->
         <section id="hero-section" class="hero-section">
             <div class="container hero-content">
                 <p class="hero-tagline">
@@ -535,11 +200,9 @@
             </div>
         </section>
 
-        <!-- PROBLEM / SOLUTION SECTION: The Mission -->
         <section id="about" class="about-section">
             <div class="container">
                 <div class="about-grid">
-                    <!-- Left: Text Content -->
                     <div class="about-text">
                         <h2>
                             Solving the Notebook & Memory Problem
@@ -549,7 +212,6 @@
                         </p>
                         <ul class="mission-list">
                             <li>
-                                <!-- Checkmark Icon -->
                                 <svg class="checkmark-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -569,10 +231,8 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Right: Mockup/Visual (Placeholder using brand colors) -->
                     <div class="mockup-visual">
                         <div class="mockup-frame">
-                            <!-- Placeholder for a Mobile App Screenshot/Mockup -->
                             <div class="mockup-text">
                                 <span class="title">BUSINTORY APP</span>
                                 <span class="subtitle">Clean UI Mockup Placeholder</span>
@@ -588,7 +248,6 @@
             </div>
         </section>
 
-        <!-- FEATURE SECTION: Key Benefits -->
         <section id="features" class="features-section">
             <div class="container">
                 <div class="features-header">
@@ -602,40 +261,32 @@
 
                 <div class="features-grid">
 
-                    <!-- Feature 1: Inventory/Stock -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <!-- Box Icon for Inventory -->
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m-8-4h16"/></svg>
                         </div>
                         <h3>Monitor Stock Levels</h3>
                         <p>Track products and get low-stock alerts instantly, so you never miss a sale.</p>
                     </div>
 
-                    <!-- Feature 2: Sales Management -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <!-- Shopping Cart Icon for Sales -->
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                         </div>
                         <h3>Manage Sales Transactions</h3>
                         <p>Record sales quickly and accurately, whether you run a kiosk or a chain of stores.</p>
                     </div>
 
-                    <!-- Feature 3: Debt/Credit Management -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <!-- Money/Hand Icon for Debt -->
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2c1.657 0 3 .895 3 2s-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 10v1m-2-7h2m-2 4h2M9 11h2m-2 4h2m4-4h2m-2 4h2M5 3a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H5z"/></svg>
                         </div>
                         <h3>Handle Debt & Credit</h3>
                         <p>Efficiently track customer and supplier debt, and share updates over WhatsApp.</p>
                     </div>
 
-                    <!-- Feature 4: Reporting/Growth -->
                     <div class="feature-card">
                         <div class="feature-icon-box">
-                            <!-- Chart Icon for Reports -->
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6"/></svg>
                         </div>
                         <h3>Profit & Loss Reports</h3>
@@ -645,7 +296,6 @@
             </div>
         </section>
 
-        <!-- CTA SECTION: Final Push -->
         <section id="contact" class="final-cta-section">
             <div class="container">
                 <h2>
@@ -661,7 +311,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
