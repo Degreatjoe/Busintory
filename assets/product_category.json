@@ -1,0 +1,10 @@
+[
+  { "product_category_id": 1, "name": "Beverages" },
+  { "product_category_id": 2, "name": "Snacks" },
+  { "product_category_id": 3, "name": "Dairy" },
+  { "product_category_id": 4, "name": "Bakery" },
+  { "product_category_id": 5, "name": "Household Supplies" },
+  { "product_category_id": 6, "name": "Frozen Foods" },
+  { "product_category_id": 7, "name": "Canned Goods" },
+  { "product_category_id": 8, "name": "Personal Care" }
+]

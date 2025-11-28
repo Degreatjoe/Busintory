@@ -1,0 +1,11 @@
+[
+  { "product_variant_id": 1, "name": "1L", "variant_type_id": 1, "product_id": 1 },
+  { "product_variant_id": 2, "name": "500ml", "variant_type_id": 1, "product_id": 1 },
+  { "product_variant_id": 3, "name": "Chocolate", "variant_type_id": 2, "product_id": 2 },
+  { "product_variant_id": 4, "name": "Vanilla", "variant_type_id": 2, "product_id": 2 },
+  { "product_variant_id": 5, "name": "1L", "variant_type_id": 1, "product_id": 3 },
+  { "product_variant_id": 6, "name": "500ml", "variant_type_id": 1, "product_id": 3 },
+  { "product_variant_id": 7, "name": "Pack of 1", "variant_type_id": 3, "product_id": 4 },
+  { "product_variant_id": 8, "name": "Pack of 2", "variant_type_id": 3, "product_id": 4 },
+  { "product_variant_id": 9, "name": "2L", "variant_type_id": 1, "product_id": 5 }
+]

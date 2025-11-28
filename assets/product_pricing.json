@@ -1,0 +1,72 @@
+[
+  {
+    "product_pricing_id": 1,
+    "product_id": 1,
+    "cost_price": 0.45,
+    "selling_price": 1.20,
+    "timestamp": "2024-12-01T10:00:00"
+  },
+  {
+    "product_pricing_id": 2,
+    "product_id": 1,
+    "cost_price": 0.50,
+    "selling_price": 1.25,
+    "timestamp": "2025-01-01T10:00:00"
+  },
+  {
+    "product_pricing_id": 3,
+    "product_id": 2,
+    "cost_price": 0.35,
+    "selling_price": 1.40,
+    "timestamp": "2024-12-15T12:00:00"
+  },
+  {
+    "product_pricing_id": 4,
+    "product_id": 2,
+    "cost_price": 0.40,
+    "selling_price": 1.50,
+    "timestamp": "2025-02-01T08:00:00"
+  },
+  {
+    "product_pricing_id": 5,
+    "product_id": 3,
+    "cost_price": 0.75,
+    "selling_price": 1.40,
+    "timestamp": "2025-01-05T09:00:00"
+  },
+  {
+    "product_pricing_id": 6,
+    "product_id": 3,
+    "cost_price": 0.80,
+    "selling_price": 1.50,
+    "timestamp": "2025-02-10T09:00:00"
+  },
+  {
+    "product_pricing_id": 7,
+    "product_id": 4,
+    "cost_price": 0.95,
+    "selling_price": 1.90,
+    "timestamp": "2025-01-10T11:00:00"
+  },
+  {
+    "product_pricing_id": 8,
+    "product_id": 4,
+    "cost_price": 1.00,
+    "selling_price": 2.00,
+    "timestamp": "2025-02-01T11:00:00"
+  },
+  {
+    "product_pricing_id": 9,
+    "product_id": 5,
+    "cost_price": 2.90,
+    "selling_price": 5.25,
+    "timestamp": "2025-01-15T14:00:00"
+  },
+  {
+    "product_pricing_id": 10,
+    "product_id": 5,
+    "cost_price": 3.00,
+    "selling_price": 5.50,
+    "timestamp": "2025-02-01T14:00:00"
+  }
+]

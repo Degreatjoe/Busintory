@@ -1,0 +1,26 @@
+[
+  {
+    "store_id": 1,
+    "name": "Green Valley Market",
+    "address": "1842 Redwood Avenue, Portland, OR",
+    "currency": "USD",
+    "timezone": "America/Los_Angeles",
+    "owner_id": 1
+  },
+  {
+    "store_id": 2,
+    "name": "MetroFresh Superstore",
+    "address": "300 Fairview Blvd, Chicago, IL",
+    "currency": "USD",
+    "timezone": "America/Chicago",
+    "owner_id": 1
+  },
+  {
+    "store_id": 3,
+    "name": "Sunrise Grocers",
+    "address": "75 Lakeside Road, Miami, FL",
+    "currency": "USD",
+    "timezone": "America/New_York",
+    "owner_id": 2
+  }
+]

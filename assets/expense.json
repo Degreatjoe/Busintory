@@ -1,0 +1,44 @@
+[
+  {
+    "expense_id": 1,
+    "amount": 1200.00,
+    "note": "Monthly rent",
+    "timestamp": "2025-03-01T09:00:00",
+    "store_id": 1
+  },
+  {
+    "expense_id": 2,
+    "amount": 150.00,
+    "note": "Cleaning supplies",
+    "timestamp": "2025-03-05T17:30:00",
+    "store_id": 1
+  },
+  {
+    "expense_id": 3,
+    "amount": 500.00,
+    "note": "Monthly rent",
+    "timestamp": "2025-03-01T09:00:00",
+    "store_id": 2
+  },
+  {
+    "expense_id": 4,
+    "amount": 200.00,
+    "note": "Utility bills",
+    "timestamp": "2025-03-03T12:00:00",
+    "store_id": 2
+  },
+  {
+    "expense_id": 5,
+    "amount": 900.00,
+    "note": "Monthly rent",
+    "timestamp": "2025-03-01T09:00:00",
+    "store_id": 3
+  },
+  {
+    "expense_id": 6,
+    "amount": 180.00,
+    "note": "Marketing materials",
+    "timestamp": "2025-03-10T14:00:00",
+    "store_id": 3
+  }
+]

@@ -1,0 +1,6 @@
+[
+  { "variant_type_id": 1, "name": "Size" },
+  { "variant_type_id": 2, "name": "Flavor" },
+  { "variant_type_id": 3, "name": "Packaging" },
+  { "variant_type_id": 4, "name": "Weight" }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "worker_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@gvmarket.com",
+    "role": "Cashier",
+    "permissions": "POS_ONLY",
+    "store_id": 1
+  },
+  {
+    "worker_id": 2,
+    "name": "David Kim",
+    "email": "david.kim@gvmarket.com",
+    "role": "Inventory Clerk",
+    "permissions": "INVENTORY_MANAGE",
+    "store_id": 1
+  },
+  {
+    "worker_id": 3,
+    "name": "Laura Phelps",
+    "email": "laura.phelps@metrofresh.com",
+    "role": "Supervisor",
+    "permissions": "FULL_ACCESS",
+    "store_id": 2
+  },
+  {
+    "worker_id": 4,
+    "name": "Erik Sanchez",
+    "email": "erik.sanchez@metrofresh.com",
+    "role": "Cashier",
+    "permissions": "POS_ONLY",
+    "store_id": 2
+  },
+  {
+    "worker_id": 5,
+    "name": "Maria Torres",
+    "email": "maria.torres@sunrisegrocers.com",
+    "role": "Store Manager",
+    "permissions": "FULL_ACCESS",
+    "store_id": 3
+  }
+]

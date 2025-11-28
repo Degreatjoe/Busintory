@@ -1,0 +1,17 @@
+[
+  {
+    "sstore_category_id": 1,
+    "name": "Urban Branch",
+    "store_id": 1
+  },
+  {
+    "sstore_category_id": 2,
+    "name": "Mega-Store",
+    "store_id": 2
+  },
+  {
+    "sstore_category_id": 3,
+    "name": "Coastal Outlet",
+    "store_id": 3
+  }
+]
